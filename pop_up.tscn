@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://di4l4bpor2l4e"]
+
+[ext_resource type="Theme" uid="uid://cjtqa48ed4tmq" path="res://assets/theme.tres" id="1_eydj1"]
+[ext_resource type="Texture2D" uid="uid://bae4kocis1c7q" path="res://assets/ui/title.png" id="2_e6grh"]
+[ext_resource type="Script" path="res://scripts/pop_up.gd" id="2_mu5v4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m58nm"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 10
+shadow_offset = Vector2(5, 5)
+
+[node name="PopUp" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_eydj1")
+script = ExtResource("2_mu5v4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.443137)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(900, 600)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m58nm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_e6grh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+text = "Flip over matching cards to earn a point! Find all 26 pairs to win!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "PLAY NOW"
+flat = true

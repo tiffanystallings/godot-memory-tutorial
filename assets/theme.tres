@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cjtqa48ed4tmq"]
+
+[ext_resource type="FontFile" uid="uid://l3m2ka83f4n0" path="res://assets/fonts/Nunito-Bold.ttf" id="1_ek2tb"]
+[ext_resource type="FontFile" uid="uid://dp7ua271hwxjc" path="res://assets/fonts/Nunito-Regular.ttf" id="2_qxchx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llxp0"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 10
+shadow_offset = Vector2(5, 5)
+
+[resource]
+default_font = ExtResource("2_qxchx")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/constants/h_separation = 2
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("1_ek2tb")
+Fonts/fonts/large = ExtResource("1_ek2tb")
+Fonts/fonts/normal = ExtResource("2_qxchx")
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.556863)
+Label/constants/shadow_offset_x = 3
+Label/constants/shadow_offset_y = 3
+Label/constants/shadow_outline_size = 3
+Label/font_sizes/font_size = 25
+Label/fonts/font = ExtResource("2_qxchx")
+Panel/styles/panel = SubResource("StyleBoxFlat_llxp0")

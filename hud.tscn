@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=3 uid="uid://6q1u70lpumig"]
+
+[ext_resource type="Theme" uid="uid://cjtqa48ed4tmq" path="res://assets/theme.tres" id="1_j5ikw"]
+[ext_resource type="FontFile" uid="uid://l3m2ka83f4n0" path="res://assets/fonts/Nunito-Bold.ttf" id="2_q2c8h"]
+[ext_resource type="FontFile" uid="uid://dp7ua271hwxjc" path="res://assets/fonts/Nunito-Regular.ttf" id="3_hkci1"]
+[ext_resource type="Texture2D" uid="uid://da756rbg5dil4" path="res://assets/ui/pause.png" id="4_fwsm8"]
+[ext_resource type="Script" path="res://ButtonPause.gd" id="5_fej4t"]
+[ext_resource type="Texture2D" uid="uid://b73g6jkt2j1h3" path="res://assets/ui/return.png" id="5_ywd1k"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.5
+mouse_filter = 2
+theme = ExtResource("1_j5ikw")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 580.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sections" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SectionScore" type="VBoxContainer" parent="Panel/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/Sections/SectionScore"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_q2c8h")
+theme_override_font_sizes/font_size = 25
+text = "Score:"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Score" type="Label" parent="Panel/Sections/SectionScore"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_hkci1")
+theme_override_font_sizes/font_size = 100
+text = "##"
+horizontal_alignment = 1
+
+[node name="SectionSeconds" type="VBoxContainer" parent="Panel/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/Sections/SectionSeconds"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_q2c8h")
+theme_override_font_sizes/font_size = 25
+text = "Seconds:"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Seconds" type="Label" parent="Panel/Sections/SectionSeconds"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_hkci1")
+theme_override_font_sizes/font_size = 100
+text = "##"
+horizontal_alignment = 1
+
+[node name="SectionMoves" type="VBoxContainer" parent="Panel/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/Sections/SectionMoves"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_q2c8h")
+theme_override_font_sizes/font_size = 25
+text = "Moves:"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Moves" type="Label" parent="Panel/Sections/SectionMoves"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_hkci1")
+theme_override_font_sizes/font_size = 100
+text = "##"
+horizontal_alignment = 1
+
+[node name="SectionButtons" type="VBoxContainer" parent="Panel/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="ButtonPause" type="TextureButton" parent="Panel/Sections/SectionButtons"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("4_fwsm8")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_fej4t")
+
+[node name="ButtonReset" type="TextureButton" parent="Panel/Sections/SectionButtons"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("5_ywd1k")
+ignore_texture_size = true
+stretch_mode = 5
